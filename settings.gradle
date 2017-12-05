@@ -1,0 +1,4 @@
+rootProject.name = 'site-sample'
+include 'data-service'
+include 'data-spring'
+

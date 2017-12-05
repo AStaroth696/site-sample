@@ -1,0 +1,26 @@
+group 'com.company'
+version '1.0-SNAPSHOT'
+
+ext {
+    springVersion = '4.3.12.RELEASE'
+}
+
+buildscript {
+    repositories {
+        mavenCentral()
+        jcenter()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.5.8.RELEASE")
+        classpath 'org.springframework:springloaded:1.2.6.RELEASE'
+        classpath 'org.akhikhl.gretty:gretty:+'
+    }
+}
+
+allprojects {
+    repositories {
+        jcenter()
+        mavenCentral()
+        maven { url 'https://jitpack.io' }
+    }
+}
