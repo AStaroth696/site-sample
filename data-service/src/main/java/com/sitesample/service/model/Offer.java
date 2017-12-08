@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.util.Date;
 
 @Entity
 public class Offer {
@@ -16,7 +17,27 @@ public class Offer {
 
   private String description;
 
-  private float prive;
+  private float price;
+
+  private Date date;
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    private User user;
 
     public int getId() {
         return id;
@@ -42,11 +63,11 @@ public class Offer {
         this.description = description;
     }
 
-    public float getPrive() {
-        return prive;
+    public float getPrice() {
+        return price;
     }
 
-    public void setPrive(float prive) {
-        this.prive = prive;
+    public void setPrice(float prive) {
+        this.price = prive;
     }
 }

@@ -1,9 +1,11 @@
 package com.siteSample.web.controller;
 
+import com.siteSample.web.auth.UserAuthDetailService;
 import com.sitesample.service.dao.UserDao;
 import com.sitesample.service.model.User;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -79,5 +81,7 @@ public class UserController {
         }
         return "login";
     }
+
+
 
 }

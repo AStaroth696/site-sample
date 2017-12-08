@@ -4,6 +4,7 @@ import com.sitesample.service.DatabaseConfig;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Import;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -29,7 +30,7 @@ public class WebApplication extends WebSecurityConfigurerAdapter{
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
-                    .usernameParameter("name")
+                    .usernameParameter("email")
                     .passwordParameter("password")
                     .defaultSuccessUrl("/", true)
                     .loginPage("/login").permitAll()

@@ -15,22 +15,36 @@
 
     <script src="/js/script.js"></script>
 
-    <title>Site Smaple</title>
+    <title>Главная страница</title>
 </head>
 <body>
     <div  class = "container">
         <h1 class="page-header">
             Users
             <span class="pull-right">
-                    <span class="user">${User.principal.username}</span>
+                <a href="/user" title="Личный каибbнет"><span class="user">${user.name}</span></a>
                     <a href="/logout"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span></a>
                 </span>
         </h1>
         <div class="container-fluid controls-bar">
             <div class="row">
-                <div class="text-right">
-                    <a href="/user/edit" class="btn btn-default edit">New</a>
-                </div>
+                <table class="table table-bordered">
+                    <tr>
+                        <td>ID</td>
+                        <td>Username</td>
+                        <td>Email</td>
+                        <td>Password</td>
+                    </tr>
+                    <c:forEach var="user" items="${users}">
+                        <tr>
+                            <td>${user.id}</td>
+                            <td>${user.name}</td>
+                            <td>${user.email}</td>
+                            <td>${user.password}</td>
+
+                        </tr>
+                    </c:forEach>
+                </table>
             </div>
         </div>
     </div>

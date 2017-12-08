@@ -13,12 +13,14 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.min.js"></script>
 
+    <title>Вход</title>
+
 </head>
 <body>
 <div class="container">
 
     <div class="float-form panel panel-default">
-        <div class="panel-heading"><h3>Login</h3></div>
+        <div class="panel-heading"><h3>Вход</h3></div>
         <form class="form-horizontal" action="/login" method="post">
             <input type="hidden"  name="${_csrf.parameterName}"   value="${_csrf.token}"/>
             <div class="panel-body">
@@ -28,15 +30,15 @@
                     </div>
                 </c:if>
                 <div class="form-group">
-                    <label for="email" class="col-sm-3 control-label">Email</label>
+                    <label for="email" class="col-sm-3 control-label">Электронная почта</label>
                     <div class="col-sm-9">
-                        <input type="email" class="form-control" id="email" name="email" placeholder="Email">
+                        <input type="email" class="form-control" id="email" name="email" placeholder="Электронная почта">
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="password" class="col-sm-3 control-label">Password</label>
+                    <label for="password" class="col-sm-3 control-label">Пароль</label>
                     <div class="col-sm-9">
-                        <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+                        <input type="password" class="form-control" id="password" name="password" placeholder="Пароль">
                     </div>
                 </div>
                 <div class="form-group">
@@ -44,8 +46,8 @@
                 </div>
                 <div class="form-group">
                     <div class="col-sm-offset-3 col-sm-5">
-                        <button type="submit" class="btn btn-primary">Sign in</button>
-                        <a class="register" href="/register">Register</a>
+                        <button type="submit" class="btn btn-primary">Вход</button>
+                        <a class="register" href="/register">Регистрания</a>
                     </div>
                 </div>
             </div>
