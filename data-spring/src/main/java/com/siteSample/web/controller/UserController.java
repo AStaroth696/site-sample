@@ -82,6 +82,10 @@ public class UserController {
         return "login";
     }
 
-
-
+    @RequestMapping(value = "user", method = RequestMethod.GET)
+    public String userProfile(Model model){
+        User user = userDao.findByName(SecurityContextHolder.getContext().getAuthentication().getName());
+        model.addAttribute("user", user);
+        return "user";
+    }
 }

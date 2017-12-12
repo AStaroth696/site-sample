@@ -11,33 +11,15 @@ public class Offer {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private int id;
+    private int id;
 
-  private String header;
+    private String header;
 
-  private String description;
+    private String description;
 
-  private float price;
+    private float price;
 
-  private Date date;
-
-    public Date getDate() {
-        return date;
-    }
-
-    public void setDate(Date date) {
-        this.date = date;
-    }
-
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
-    }
-
-    private User user;
+    private Date date;
 
     public int getId() {
         return id;
@@ -67,7 +49,15 @@ public class Offer {
         return price;
     }
 
-    public void setPrice(float prive) {
-        this.price = prive;
+    public void setPrice(float price) {
+        this.price = price;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
     }
 }
