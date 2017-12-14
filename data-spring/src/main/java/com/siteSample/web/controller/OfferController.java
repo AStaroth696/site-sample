@@ -23,6 +23,7 @@ public class OfferController {
 
     @RequestMapping(value = "offers", method = RequestMethod.GET)
     public String viewOffers(Model model){
+        model.addAttribute("user", SecurityContextHolder.getContext().getAuthentication());
         model.addAttribute("offers", offerDao.getAll());
         return "offers";
     }
@@ -37,7 +38,7 @@ public class OfferController {
     public String createOffer(Model model,
                               @RequestParam(value = "header") String header,
                               @RequestParam(value = "description") String description,
-                              @RequestParam(value = "price") float price){
+                              @RequestParam(value = "price") String price){
 
         List<String> errors = new ArrayList<>();
 
@@ -47,6 +48,9 @@ public class OfferController {
         if (StringUtils.isEmpty(description)){
             errors.add("Заполните описание");
         }
+        if (StringUtils.isEmpty(price)){
+            errors.add("Установите цену");
+        }
         if (errors.size()>0){
             model.addAttribute("errors", errors);
             return "createoffer";
@@ -54,7 +58,7 @@ public class OfferController {
             Offer offer = new Offer();
             offer.setHeader(header);
             offer.setDescription(description);
-            offer.setPrice(price);
+            offer.setPrice(Float.parseFloat(price));
             offer.setDate(new Date());
             offerDao.create(offer);
 
